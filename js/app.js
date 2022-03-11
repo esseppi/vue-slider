@@ -54,6 +54,7 @@ const app = new Vue({
       },
     ],
   },
+  timer: 0,
   methods: {
     previousIndex() {
       if (this.currentIndex == 0) {
@@ -69,5 +70,11 @@ const app = new Vue({
         this.currentIndex++;
       }
     },
+    startSlide() {
+      this.timer = setInterval(this.nextIndex, 3000);
+    },
+  },
+  created() {
+    this.startSlide();
   },
 });
