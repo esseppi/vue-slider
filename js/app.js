@@ -54,7 +54,20 @@ const app = new Vue({
       },
     ],
   },
-  //   methods: {
-
-  //   }
+  methods: {
+    previousIndex() {
+      if (this.currentIndex == 0) {
+        this.currentIndex = this.array.length - 1;
+      } else {
+        this.currentIndex--;
+      }
+    },
+    nextIndex() {
+      if (this.currentIndex == this.array.length - 1) {
+        this.currentIndex = 0;
+      } else {
+        this.currentIndex++;
+      }
+    },
+  },
 });
