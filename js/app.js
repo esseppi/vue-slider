@@ -73,6 +73,9 @@ const app = new Vue({
     startSlide() {
       this.timer = setInterval(this.nextIndex, 3000);
     },
+    stopSlide() {
+      clearTimeout(this.timer);
+    },
   },
   created() {
     this.startSlide();
